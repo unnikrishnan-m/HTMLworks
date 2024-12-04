@@ -1,0 +1,54 @@
+{%extends 'base.html'%}
+
+{%block mainblock%}
+
+<div class="con">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-2"></div>
+        <div class="col-2"></div>
+        <div class="col-2"></div>
+        <div class="col-2"></div>
+        <div class="col-2">
+            <a class="btn bg-black text-white mt-5"href="{%url 'vehicle-create'%}">Add</a>
+        </div>
+    </div>
+</div>
+
+<div class="con">
+
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <table class="table border my-5">
+
+                <tr>
+                    <th>title</th>
+                    <th>owner type</th>
+                    <th>running kilometers</th>
+                    <th>price</th>
+                    <th>fuel type</th>
+                    <th>Actions</th>
+                </tr>
+                {%for q in qs%}
+                <tr>
+                    <td>{{q.title}}</td>
+                    <td>{{q.owner_type}}</td>
+                    <td>{{q.running_kilometers}}</td>
+                    <td>{{q.price}}</td>
+                    <td>{{q.fuel_type}}</td>
+                    <td><a href="{%url 'vehicle-detail' q.id %}">View</a>
+                        <a href="{%url 'vehicle-update' q.id %}">edit</a>
+                        <a href="{%url 'vehicle-delete' q.id %}">delete</a></td>
+                </tr>
+                {%endfor%}
+
+            </table>
+        </div>
+        <div class="col-3"></div>
+    </div>
+
+</div>
+
+{%endblock%}
+

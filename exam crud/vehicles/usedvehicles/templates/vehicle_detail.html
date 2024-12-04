@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+{%block mainblock%}
+<div class="con">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4 my-5">
+
+            <table class="table border">
+                <tr>
+                    <td>{{qs.title}} </td>      
+                    <td>{{qs.owner_type}}</td>
+                    <td>{{qs.running_kilometers}}</td>
+                    <td>{{qs.price}}</td>
+                    <td>{{qs.fuel_type}}</td></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+{%endblock%}
